@@ -4,18 +4,32 @@ import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.lang.reflect.Array;
 import java.util.Random;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class GameBoardActivity extends AppCompatActivity {
     public static final String TAG = GameBoardActivity.class.getSimpleName();
+    @Bind(R.id.Cell0) TextView cell0;
+    @Bind(R.id.Cell1) TextView cell1;
+    @Bind(R.id.Cell2) TextView cell2;
+    @Bind(R.id.Cell3) TextView cell3;
+    @Bind(R.id.Cell4) TextView cell4;
+    @Bind(R.id.Cell5) TextView cell5;
+    @Bind(R.id.Cell6) TextView cell6;
+    @Bind(R.id.Cell7) TextView cell7;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_board);
+        ButterKnife.bind(this);
 
         String[] alphabet = this.getResources().getStringArray(R.array.alphabet);
         String[] vowels = this.getResources().getStringArray(R.array.vowels);
@@ -29,7 +43,7 @@ public class GameBoardActivity extends AppCompatActivity {
             Log.d(TAG, Boolean.toString(validateVowels(boggleSequence, vowels)));
         } while (!validateVowels(boggleSequence, vowels));
 
-//        Toast.makeText(GameBoardActivity.this, alphabet[number], Toast.LENGTH_LONG).show();
+        cell0.setText(boggleSequence[0]);
     }
 
     private String[] randomSequence (String[] alphabet, int amount) {
