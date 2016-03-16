@@ -15,7 +15,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Start"
-        android:id="@+id/button"
+        android:id="@+id/startButton"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:height="200dp"
@@ -27,7 +27,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
-        android:layout_above="@+id/button"
+        android:layout_above="@+id/startButton"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="81dp"
         android:textSize="20sp" />
