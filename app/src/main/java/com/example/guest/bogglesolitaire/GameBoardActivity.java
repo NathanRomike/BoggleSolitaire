@@ -78,6 +78,9 @@ public class GameBoardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 wordText.setText("");
+                mAdapter.clear();
+                mAdapter.addAll(boggleSequence);
+                mAdapter.notifyDataSetChanged();
             }
         });
 
